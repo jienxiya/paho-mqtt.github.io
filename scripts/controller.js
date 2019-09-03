@@ -5,16 +5,18 @@ $('#btn-connect').click(function(){
    $("#status").text("Connecting...");
   
   client.on("connect", function(){
-    //  $("#status").text("Successfully connected!!!!");
+     $("#status").text("Successfully connected!!!!");
    
-    // Swal.fire({
-    //   position: 'center',
-    //   type: 'success!!',
-    //   title: 'your sucessfully connected to the broker!',
-    //   showConfirmButton: false,
-    //   timer: 2000
-    //   })
+    Swal.fire({
+      position: 'center',
+      type: 'success!!',
+      title: 'your sucessfully connected to the broker!',
+      showConfirmButton: false,
+      timer: 2000
+      })
+    // $("#status").text
     console.log("success");
+
   });
 
   $("#btn-disconnect").click(function() {

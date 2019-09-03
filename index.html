@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="shortcut icon" href=http://www.freshdesignweb.com/wp-content/themes/fv24/images/icon.ico />
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -12,59 +13,105 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+<style type="text/css">
+	.header{
+		background-color: #66d9ff;
+		padding: 10px;
+		box-shadow: 5px 5px 5px grey;
+	}
+	.theme-topic{
+		background-color: #ff80ff;
+		padding: 10px;
+		box-shadow: 5px 5px 5px grey;
+	}
+	button {
+		display: inline-block;
+		padding: 10px 15px;
+		font-size: 20px;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		outline: none;
+		color: black;
+		background-color: #66d9ff;
+		border: none;
+		border-radius: 10px;
+		box-shadow: 5px 5px 5px grey;
+		}
 
+	button:hover {background-color: #ff80ff}
+
+	button:active {
+		background-color: #ff80ff;
+		box-shadow: 5px 5px 5px grey;
+		transform: translateY(4px);
+		}
+	#btn-disconnect{
+		margin-left: 75px;
+	}
+	#btn-connect{
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	.btn-background{
+		background-color: #fff;
+		padding: 10px;
+		box-shadow: 5px 5px 5px grey;
+	}
+	.col-sm-4{
+		background-color: #d2a679;
+		padding: 15px;
+		border: none;
+		border-radius: 5px;
+	}
+
+</style>
 <body>
-
+<div>
+	
+</div>
+<br><br>
 <div class="container">
+	<div class="row">
 		<div class="col-sm-4">
-			<!-- <div class="plan plan1"> -->
-	            <div class="header">Broker</div>
-	            	<div class="theme-topic">Address:</div>
-		            <ul>
-		                <li><input type="text" id="address" value="wss://test.mosquitto.org:8081/mqtt"></li>
-		            </ul>
-	          
-	            	<button class="signup" id="btn-connect">Connect</button>
-	            <br><br>
+				<center><div class="header">Broker</div></center>																										
+	            	<div class="theme-topic">Address: <input class="w3-input w3-border w3-round-large" type="text" id="address" value="wss://test.mosquitto.org:8081/mqtt"></div>
+		
+	           <hr>
+	          	<div class="btn-background">
+	          		<button class="signup" id="btn-connect">Connect</button>
 	            	<button class="signup" id="btn-disconnect">Disconnect</button>
-	            <br><br>
-	           		<!-- <div class="card-footer">
+	          	</div>
+	           		<div class="card-footer">
 	                    <div id="status" class="text-center alert alert-secondary">
 	                        Disconnected!
 	                    </div>
-	                </div> -->
+	                </div>
 	       </div>
-		<!-- </div> -->
 
 		<div class="col-sm-4">
-				<!-- <div class="plan plan3"> -->
-		            <div class="header">Publisher</div>
-		            	<div class="theme-topic">Topic:</div>
-			            <ul>
-			                <li><input type="text" id="topic" value="demo"></li>
-			            </ul>
-		            <div class="theme-topic">Message:</div>
-			            <ul>
-			                <li><input type="text" id="message" value="hi"></li>
-			            </ul>
+		            <center><div class="header">Publisher</div></center>
+		            	<div class="theme-topic">Topic: <input class="w3-input w3-border w3-round-large" type="text" id="topic" placeholder="input topic"></div>
+		            <hr>
+		            <div class="theme-topic">Message: <input class="w3-input w3-border w3-round-large" type="text" id="message" placeholder="input message"></div>
+			        <hr>
+			        <div class="btn-background">
+			        	<center><button class="signup" id="btn-publish">Publish</button></center>
+			        </div>
 		            
-		            	<button class="signup" id="btn-publish">Publish</button>
         </div>				
-		<!-- </div> -->
 
 		<div class="col-sm-4">
-			<!-- <div class="plan plan4"> -->
             	<div class="header">Subscriber</div>
 
-            		<div class="theme-topic">Topic:</div>
-			            <ul>
-			                <li><input type="text" id="topic-sub" value="demo"></li>
-
-			            </ul>
-            <hr>
-            	<button  class="signup" id="btn-subscribe">Subscribe</button>
-        <!-- </div> -->
+            	<div class="theme-topic">Topic: <input class="w3-input w3-border w3-round-large" type="text" id="topic-sub" placeholder="subscribe topic"></div>
+            	<hr>
+            	<div class="btn-background">
+            		<center><button class="signup" id="btn-subscribe">Subscribe</button></center>
+            	</div>
+            	
 		</div>
+</div>
 </div>
 
 <br><br>
