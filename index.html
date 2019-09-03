@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MQTT over Websocket</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href=http://www.freshdesignweb.com/wp-content/themes/fv24/images/icon.ico />
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+		<div class="col-sm-4">
+			<!-- <div class="plan plan1"> -->
+	            <div class="header">Broker</div>
+	            	<div class="theme-topic">Address:</div>
+		            <ul>
+		                <li><input type="text" id="address" value="ws://broker.hivemq.com:8000/mqtt"></li>
+		            </ul>
+	            <hr>
+	            	<button class="signup" id="btn-connect">Connect</button>
+	            <br><br>
+	            	<button class="signup" id="btn-disconnect">Disconnect</button>
+	            <br><br>
+	           		<div class="card-footer">
+	                    <div id="status" class="text-center alert alert-secondary">
+	                        Disconnected!
+	                    </div>
+	                </div>
+	       </div>
+		<!-- </div> -->
+
+		<div class="col-sm-4">
+				<!-- <div class="plan plan3"> -->
+		            <div class="header">Publisher</div>
+		            	<div class="theme-topic">Topic:</div>
+			            <ul>
+			                <li><input type="text" id="topic" value="demo"></li>
+			            </ul>
+		            <div class="theme-topic">Message:</div>
+			            <ul>
+			                <li><input type="text" id="message" value="hi"></li>
+			            </ul>
+		            <hr>
+		            	<button class="signup" id="btn-publish">Publish</button>
+        </div>				
+		<!-- </div> -->
+
+		<div class="col-sm-4">
+			<!-- <div class="plan plan4"> -->
+            	<div class="header">Subscriber</div>
+
+            		<div class="theme-topic">Topic:</div>
+			            <ul>
+			                <li><input type="text" id="topic-sub" value="demo"></li>
+
+			            </ul>
+            <hr>
+            	<button  class="signup" id="btn-subscribe">Subscribe</button>
+        <!-- </div> -->
+		</div>
+</div>
+
+<br><br>
+    <center>
+        <div class="row">
+            <table class="text-center table table-hover table-bordered">
+                <thead class="table-success">
+                    <tr>
+                        <th>Topic</th>
+                        <th>Message</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl-body">
+
+                </tbody>
+            </table>
+        </div>
+    </center>
+</body>
+
+<script type="text/javascript" src="C:\Users\2ndyrGroupB\paho-mqtt\scripts\paho-mqtt.js"></script>
+<script type="text/javascript" src="C:\Users\2ndyrGroupB\paho-mqtt\scripts\controller.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+</html>
+
