@@ -1,5 +1,5 @@
 $('#btn-connect').click(function(){
-  client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt");
+  client = mqtt.connect("wss://test.mosquito.org:8081/mqtt");
   client.subscribe($("#topic").val());
   console.log('connect button when clicked');
    $("#status").text("Connecting...");
