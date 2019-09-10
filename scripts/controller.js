@@ -54,45 +54,30 @@ $(document).ready(function () {
   $("#btn-subscribe").click(function () {
     var topic = $("#topic-sub").val();
     if (topic == "") {
-        alert("Error")
-        console.log("Error")
+      alert("Error")
+      console.log("Error")
     } else {
 
-        if (!SubscribedTopics.includes(topic)) {
-            client.subscribe(topic)
-            SubscribedTopics.push(topic)
-            var row = $("<tr>").attr("id", "mysub");
-            $("<td>").text(topic).appendTo($(row));
-            $("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row));
-            $("#tbl-body-subscribe").append($(row));
-            alert("Are you sure you want to subscribe this topic?")
-        } else {
-            alert("Already subscribe!")
-            console.log("Already subscribe!")
-            }
-        }
+      if (!SubscribedTopics.includes(topic)) {
+        client.subscribe(topic)
+        SubscribedTopics.push(topic)
+        var row = $("<tr>").attr("id", "mysub");
+        $("<td>").text(topic).appendTo($(row));
+        $("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row));
+        $("#tbl-body-subscribe").append($(row));
+        alert("Are you sure you want to subscribe this topic?")
+      } else {
+        alert("Already subscribe!")
+        console.log("Already subscribe!")
+      }
+    }
   });
 
-
-  $("#btn-unsubsribe").click(function () {
-    var topic = $("#topic").val();
-    client.unsubscribe(topic, function (err) {
-      if (err) {
-        Swal.fire({
-          type: 'error',
-          title: 'Oops...',
-          text: 'An error occurs!',
-        });
-      } else {
-        swal.fire({
-          title: 'Confirm',
-          text: 'Are you sure you want to unsubscribe?',
-          type: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: 'green'
-        });
-      }
-    });
+  $("#btn-unsubscribe").click(function () {
+    $("#topic-sub").val("");
+    $("#mysub").remove();
+    alert("Are you sure you want to unsubscribe this topic? ")
+    console.log("Unsubscribed Successfully")
   });
 });
 
