@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/junreycloudstrife/mows/issues"
   },
-  "homepage": "https://github.com/junreycloudstrife/mows#readme"
+  "homepage": "https://github.com/junreycloudstrife/mows#readme",
+  "engines": {
+    "node": "10.16"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mqtt": "^3.0.0",
+    "socket.io": "^2.3.0"
+  }
 }
